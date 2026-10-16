@@ -270,7 +270,9 @@ three a second (see [Application design](application.md#motion)).
 ## Unknowns
 
 - Whether the tumble reads well at a child's eye height, in 3D or in 2D: the
-  cheapest thing to prototype and the first thing to show.
+  cheapest thing to prototype and the first thing to show. The 3D scene was
+  prototyped and measured on one desktop, not on a device; see
+  [Shake prototype](shake-prototype.md).
 - The tolerance for tracing on a 51 dp tile with a small finger. On an iPad the
   tiles are large and this matters on phones.
 - Whether dead jewels are acceptable to the literacy reviewer, or whether a

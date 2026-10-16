@@ -31,6 +31,7 @@ not removed.
 | [Game](game.md) | Mode B (Solo Play) and Mode A (the scanner): flow, words, stars, help, the resting screen, the check screen |
 | [Phonics](phonics.md) | The mechanism: phase data, seeding, grapheme blocks, "sound it out", the review gate. **No word list** |
 | [Board](board.md) | Sizes, where letters come from, layout and scaling, the tile, the shake, the licence cost of Qt Quick 3D |
+| [Shake prototype](shake-prototype.md) | The board scene built in Qt Quick 3D behind its seam, what it cost on one desktop, and what a 2D swap-in must keep |
 | [Application](application.md) | Screens, touch targets, type and school fonts, colour, motion, accessibility, sound, privacy built in and checked, Qt modules |
 | [Dashboard](dashboard.md) | The parent area: the gate, what is shown and how it is worded, settings, what is deferred |
 | [Performance](performance.md) | Budgets, the Tracy zones, the macro-free route, the performance tier |

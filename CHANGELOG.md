@@ -16,6 +16,13 @@ that release, so that its rules (branch protection, required checks) can apply.
 
 ### Added
 
+- **A prototype of the 3D board scene**, built only with
+  `-DWJS_BUILD_SHAKE_PROTOTYPE=ON` (and `WJS_BUILD_APP=ON`): the shake, the lid
+  and the drop in Qt Quick 3D behind a one-component interface, scripted from a
+  seed with no physics engine, with a reduced-motion variant, a mouse drag
+  standing in for the accelerometer, frame timing, and a light probe baked by
+  `tools/lightprobe`. The program links Qt Quick 3D and so is GPL-3.0 only. See
+  [docs/design/shake-prototype.md](docs/design/shake-prototype.md).
 - **A solver library with no GUI and no operating system code** (`wjs::lib`).
   It parses a board (one letter per tile, or tiles of one to three letters
   separated by spaces or commas so that the Boggle "Qu" face works, up to 16 by

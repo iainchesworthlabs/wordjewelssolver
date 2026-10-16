@@ -3,7 +3,7 @@
 The tests are Catch2 unit tests for the library, the platform layer and (when
 the Qt window is built) its model, a performance tier with its own binary, and
 checks about the build and the data itself. They run in CI on Windows (MSVC),
-Linux (GCC) and macOS (AppleClang), 133 tests each, of which the eight of the
+Linux (GCC) and macOS (AppleClang), 159 tests each, of which the eight of the
 performance tier skip themselves in a Debug build (see
 [Performance tests](#performance-tests)); the Qt model tests run only where the
 window is built, which is Windows so far.
@@ -31,7 +31,7 @@ build/windows-msvc-debug/bin/wjs_unit_tests "[solver]"
 The tags are `[board]`, `[dictionary]`, `[scoring]`, `[solver]`, `[path]`, `[dice]`
 (and `[data]` for the cases that read the shipped data),
 `[phase]` (and `[review]` for the review header), `[seeding]`, `[binder]`,
-`[shake]`, `[platform]` and `[profiling]`, and `[app]` in `wjs_app_tests`.
+`[shake]`, `[rules]`, `[platform]` and `[profiling]`, and `[app]` in `wjs_app_tests`.
 
 ## What there is
 
@@ -46,6 +46,7 @@ The tags are `[board]`, `[dictionary]`, `[scoring]`, `[solver]`, `[path]`, `[dic
 | `tests/unit/seeding_test.cpp` | `wjs::seed_board`, `RecentTargets` | The same inputs give the same board (and two boards are pinned, so a change of compiler or algorithm shows), a range of three to five words unless the board says it fell back, targets that are words of the phase and are on the board, dead jewels, focus sounds, recent targets, the cap on tries, each refused option, variety over 300 seeds; the target-length limit, and the guided fill (count kept in range, dead jewels listed as they are on the board, a function of the seed, none with letters outside the phase) |
 | `tests/unit/grapheme_binder_test.cpp` | `wjs::GraphemeBinder` | The brief's `R [AI] N`, order, longest first, greedy from the left, blocks that are whole tiles (`Qu`), single letters ignored, a block growing as the path does, every path of up to four tiles covered in order |
 | `tests/unit/shake_test.cpp` | `wjs::detect_shakes` | Synthetic traces: a shake, one still, a gentle wave, walking, a knock, turning over, a slow tilt, two shakes, a pause, sample rates and jitter, units, a harder threshold, damaged samples |
+| `tests/unit/game_rules_test.cpp` | `wjs::classify_path`, `viable_words`, `tier_for_letters`, `reward_for`, `FoundWords`, `start_tile_help`, `is_cleared` | The three states on each word set (the standard board's has no middle state; the phonics board's holds only the index, and a real word outside it is "real, not today's" with no word handed back), a word under three letters never counting, each path fault by name, a `Qu` tile adding two letters (QUIT is Power), every one of the 10,305 paths of a 3 by 3 board against the solver on both word sets; the tier table and rewards; a word found once whatever its case and kept in order; the help (shortest in letters, then nearest the top left by distance and not by reading order, then alphabetical, the same in all 120 orders of its input, unmoved while other words are found, and following it finds every word and clears the board); cleared, and the empty board |
 | `tests/unit/profiling_test.cpp` | `wjs/profiling.hpp` | That the variant CMake chose is the one it was asked for, that every call can be made with no profiler connected, and that a zone cannot be copied or moved |
 | `tests/unit/dice_test.cpp` | `wjs::DiceSet`, `wjs::roll` | The file format (a face of several letters, commas, comments, a byte-order mark), each way a set is refused, a roll using each die once and showing one of its faces, a function of the seed, two boards pinned so a change of compiler shows, every face shown over many rolls |
 | `tests/unit/dice_data_test.cpp` | The shipped dice, `data/dice` | Each size has the dice for its board and six different faces to a die with a vowel among them; 300 boards a size rolled and solved against the dictionary hold about the words a random board does; two boards pinned. Reads the shipped files by their path in the checkout, as the performance tier does |
@@ -73,6 +74,32 @@ D G S
 Of the dictionary `CAT CAR CARE ARE TAR TEA DOG COD ROD CATS REST AT`, exactly
 `CARE ARE CAR CAT COD DOG ROD TAR TEA` are found, in that order, because `CATS`
 and `REST` cannot be traced and `AT` is below the minimum length.
+
+## Game rules: what is pinned
+
+`game_rules_test.cpp` uses no word list that is in the repository: the standard
+board's word set is thirteen words written in the test, the phonics index is
+seven of them (the same seven the phase-data tests use) and every board is
+written inline, 3 by 3 or smaller.
+
+Most cases are the design's sentences. A few pin a reading the design left open;
+each is one comparison in `src/lib/src/game_rules.cpp` and one case, so a
+different decision is a small change:
+
+| Reading | Pinned by |
+| --- | --- |
+| "Nearest the top left" is the straight-line distance from the top-left tile, compared as row squared plus column squared. Reading order (the topmost row first) is the other reading and gives a different tile, for example the first tile of a word at row 0, column 3 against one at row 2, column 0 | `help names the word whose first tile is nearest...`, "distance, not reading order" |
+| "The shortest" is counted in letters, as tiers are, so QUIT is four and not three | `help counts a word's length in letters, not tiles` |
+| Ties after distance go to the upper tile, then the left one, then the word that sorts first, so the order is total and no input order can change the answer | the same case, and `help gives the same answer however the words are ordered` (all 120 orderings of five words) |
+| A real word that is not today's carries no word in the answer, so the application has none to show or read | `a word that is not today's is never handed back` |
+| A word of fewer than three letters is `not_a_word` on both boards, even when it is in the active set | `a word of fewer than three letters is not a word, however real` |
+| Only the Power tier carries a sticker, as in the author's table (the "viable" row of the design's three-state table says "its sticker the first time", which could be read as every tier) | `each tier earns its stars, and Power a sticker` |
+| A board with no viable word at all is cleared | `a board with no viable word has none left to find` |
+
+The path check is held against the solver rather than restated: for every simple
+path of a 3 by 3 board, `classify_path` says `viable` exactly when the solver
+finds the path's word, and on the standard board never says
+`real_not_todays`.
 
 ## The build checks
 

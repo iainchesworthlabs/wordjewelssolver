@@ -12,13 +12,13 @@ src/
   lib/                 wjs:: the game logic. GUI-free and OS-free
     include/wjs/         board.hpp  dice.hpp  dictionary.hpp  scoring.hpp  solver.hpp
                          path.hpp  phase_data.hpp  seeding.hpp
-                         grapheme_binder.hpp  shake.hpp
+                         grapheme_binder.hpp  shake.hpp  game_rules.hpp
                          solver_work.hpp  profiling_types.hpp
                          version.hpp.in (configured into a generated header)
     src/                 board.cpp  dice.cpp  draw.hpp (internal)  dictionary.cpp
                          scoring.cpp  solver.cpp
                          path.cpp  phase_data.cpp  seeding.cpp
-                         grapheme_binder.cpp  shake.cpp
+                         grapheme_binder.cpp  shake.cpp  game_rules.cpp
     variants/            profiling-enabled/wjs/profiling.hpp   (Tracy behind it)
                          profiling-disabled/wjs/profiling.hpp  (empty)
   cli/                 main.cpp: wjs-cli
@@ -53,7 +53,8 @@ tools/hooks/, policy/  git hooks and the commit and PR text rule
    wjs::lib                            wjs::platform
    board, dictionary, scoring,         one implementation of each
    solver, path, phase data,           interfaces/ header, chosen by CMake
-   seeding, grapheme binder, shake
+   seeding, grapheme binder, shake,
+   game rules
 ```
 
 - **`wjs::lib`** (target `wjs_lib`, a static library) includes no operating
@@ -294,6 +295,83 @@ gentle wave are not shakes. The numbers are starting values, tuned on synthetic
 traces and not on a device. Reading the sensor is an operating-system service and
 belongs behind an interface in `src/platforms`, which is not written.
 
+### Game rules
+
+`game_rules.hpp` is what the touch handler and the tray call to ask a board in
+play four questions. It draws nothing, plays nothing and keeps nothing between
+boards; the application keeps the answers.
+
+The questions are put to a **word set**, `WordSets{dictionary, active}`, because
+the first release has two board modes and the rules do not know which they are
+on (decided by the author, 2026-10-16; see [MVP library](design/mvp-library.md)).
+On the **standard board**, a roll of dice, `active` is the full dictionary
+itself (`WordSets::standard`). On the **phonics board**, the parent's switch,
+`active` is the words of the active `PhaseIndex` (`WordSets::phonics`). Both are
+held by reference and must outlive the `WordSets`.
+
+**What a traced path is.** `classify_path(board, path, words)` checks the path
+with `validate_path` and answers one of three states, never "wrong":
+
+| `WordState` | When | `word` | The application |
+| --- | --- | --- | --- |
+| `viable` | the word has three letters or more and `active` has it | the word, upper-case | a jewel, stars, the sound-it-out sequence |
+| `real_not_todays` | three letters or more, in `dictionary` and not in `active` | empty | the neutral cue: no star, no word shown or read |
+| `not_a_word` | anything else: a word of two letters or fewer, a string that is no word, a path `validate_path` refuses | empty | the path fades |
+
+On the standard board `active` and `dictionary` are one, so the middle state
+cannot arise. A refused path is `not_a_word` with the `PathError` in `fault`.
+The word is withheld from the two states that are not viable on purpose: the
+design never shows or reads a word that is not one of today's, and the library
+does not hand the application one to show. `viable_words(board, words)` is the
+solve of the board against `active` at the minimum length, the list the other
+two rules read; a path is viable exactly when its word is in it.
+
+**Tier and stars** come from the letter count and are never stored:
+`tier_for_letters(n)` (a `Qu` tile counts two, so the word's `size()` is the
+count) and `reward_for(tier)`:
+
+| Letters | `Tier` | Stars | Sticker |
+| --- | --- | --- | --- |
+| 3 | `spark` | 1 | no |
+| 4 | `power` | 2 | yes, the first time the word is found on this device |
+| 5 or more | `mega` | 5 | no (its accessory is after the MVP) |
+
+Fewer than three letters have no tier. Whether this is the first time a word
+is found on the device is the application's to know; `Reward::sticker` says
+only that the tier carries one. The Mega accessory is not modelled.
+
+**The words found on a board** are a `FoundWords`: each once, whatever its
+case, in the order found. `insert` returns whether the word was new, which is
+when the application awards stars; a word traced again on the same board is
+`viable` and `insert` says false.
+
+**The start-tile help.** `start_tile_help(viable, found)` is the start tile of
+one viable word not yet found, chosen as a total order so that nothing is
+remembered and the same press gives the same answer:
+
+1. the shortest word, counted in letters (QUIT is four);
+2. then the word whose first tile is nearest the top-left tile, by
+   straight-line distance (row squared plus column squared, an integer), the
+   upper tile winning a tie and then the left one;
+3. then the word that sorts first.
+
+The tile is the first of the path the solver reported, which is the first start
+tile in reading order that can trace the word, so the word can be traced from
+the tile that lights. Because the answer is the least of the words left in a
+fixed order, finding any other word cannot move it: it stays until its word is
+found, and then the same call names the next. It is `nullopt` when no viable
+word is left.
+
+**Cleared.** `is_cleared(viable, found)` is true when no viable word is left
+unfound. A board with no viable word at all is cleared in that literal sense,
+and none is meant to be dealt: the board is decided and checked before the
+shake, so a child never lands on one (the author, 2026-10-16). A phonics board
+always holds its planted targets, so `seed_board` already keeps to that; the
+standard board's deal does not check yet (below).
+
+What is the library's reading of the design, and what the design left open, is
+on [Testing](testing.md#game-rules-what-is-pinned).
+
 ### Errors
 
 An expected failure (a board that cannot be read, a word list that cannot be
@@ -370,11 +448,20 @@ These do not exist, and nothing in the tree stands in for them:
   the picture has to produce the text `Board::parse` accepts, or a `Board`.
   The recognition stack is not chosen, and its choice carries licensing
   questions (see [Licensing](licensing.md)).
-- **Phonics phase data.** The reader, the checks, the seeding, the binder and the
-  shake detector exist and are tested, and no front end uses them yet. No phase
+- **Phonics phase data.** The reader, the checks, the seeding, the binder, the
+  shake detector and the game rules exist and are tested, and no front end uses
+  them yet. No phase
   file exists, and none is written here: the content has to be written and
   reviewed by someone qualified to do it before a child uses it. The audio
   clips, the sound-it-out sequence and the dashboard are not built.
+- **A standard board that always holds a word.** The standard board's deal
+  (`wjs::roll` on the dice branch) does not check what it rolled, and with the
+  full dictionary some rolls hold nothing: measured 2026-10-16 with the
+  project's own dice, 3,830 of 100,000 3x3 rolls (3.8%), 30 of 20,000 4x4 rolls
+  (0.15%) and none of 5,000 5x5 or 2,000 6x6 rolls. The author's rule is that
+  such a board is never dealt, so the deal has to solve what it rolled with
+  `viable_words` and roll again until it holds a word, before the shake. Not
+  built.
 - **Using the child-facing word lists.** `data/lexicon/` holds category and
   early-reader tier lists (animals, colours, shapes, and so on); nothing reads
   them yet. The [roadmap](roadmap.md) (M2) covers the lexicon and hints.

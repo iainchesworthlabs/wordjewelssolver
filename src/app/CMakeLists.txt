@@ -43,3 +43,9 @@ add_custom_command(TARGET wjs_app POST_BUILD
         "${PROJECT_SOURCE_DIR}/data/dictionaries/en.txt"
         "$<TARGET_FILE_DIR:wjs_app>/dictionaries/en.txt"
     COMMENT "Placing the English dictionary beside the application")
+
+# The 3D board-scene prototype is a program of its own (it links Qt Quick 3D,
+# which the application must not), behind its own option.
+if(WJS_BUILD_SHAKE_PROTOTYPE)
+    add_subdirectory(prototype/shake)
+endif()
