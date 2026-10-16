@@ -764,3 +764,19 @@ TEST_CASE("a phase that uses every letter has none to keep out", "[seeding][guid
     REQUIRE_FALSE(options.has_value());
     CHECK(options.error() == wjs::SeedError::bad_dead_letter);
 }
+
+TEST_CASE("a seeded board always holds a word of the phase", "[seeding]") {
+    const auto set = make_set();
+    const auto& index = *set.find("B");
+
+    // No board without a word is ever dealt (the author, 2026-10-16). The
+    // phonics board plants its targets, so it holds one.
+    for (const std::size_t size : {3U, 4U, 5U}) {
+        const auto options = options_for(size, size == 3 ? 0 : 2);
+        for (std::uint32_t seed_value = 1; seed_value <= 100; ++seed_value) {
+            const auto seeded = seed(index, options, seed_value);
+            INFO("size " << size << " seed " << seed_value);
+            CHECK(!seeded.viable.empty());
+        }
+    }
+}

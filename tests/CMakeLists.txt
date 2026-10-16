@@ -3,6 +3,7 @@ include(Catch)
 
 add_executable(wjs_unit_tests
     unit/board_test.cpp
+    unit/deal_test.cpp
     unit/dice_data_test.cpp
     unit/dice_test.cpp
     unit/dictionary_test.cpp

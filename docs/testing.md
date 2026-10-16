@@ -3,7 +3,7 @@
 The tests are Catch2 unit tests for the library, the platform layer and (when
 the Qt window is built) its model, a performance tier with its own binary, and
 checks about the build and the data itself. They run in CI on Windows (MSVC),
-Linux (GCC) and macOS (AppleClang), 159 tests each, of which the eight of the
+Linux (GCC) and macOS (AppleClang), 204 tests each, of which the eight of the
 performance tier skip themselves in a Debug build (see
 [Performance tests](#performance-tests)); the Qt model tests run only where the
 window is built, which is Windows so far.
@@ -31,7 +31,7 @@ build/windows-msvc-debug/bin/wjs_unit_tests "[solver]"
 The tags are `[board]`, `[dictionary]`, `[scoring]`, `[solver]`, `[path]`, `[dice]`
 (and `[data]` for the cases that read the shipped data),
 `[phase]` (and `[review]` for the review header), `[seeding]`, `[binder]`,
-`[shake]`, `[rules]`, `[platform]` and `[profiling]`, and `[app]` in `wjs_app_tests`.
+`[shake]`, `[rules]`, `[deal]`, `[platform]` and `[profiling]`, and `[app]` in `wjs_app_tests`.
 
 ## What there is
 
@@ -43,10 +43,11 @@ The tags are `[board]`, `[dictionary]`, `[scoring]`, `[solver]`, `[path]`, `[dic
 | `tests/unit/solver_test.cpp` | `wjs::solve` | Adjacency, the minimum length, the path reported for a word, a tile used at most once, a word reached by several paths reported once, the `Qu` tile, the scoring scheme applied, an empty dictionary; and the work counter (`wjs/solver_work.hpp`): visits, solves and the largest, reset, and that each thread has its own |
 | `tests/unit/path_test.cpp` | `wjs::validate_path`, `wjs::are_neighbours` | The word a path spells (a `Qu` tile adds two letters), each fault (off the board, a tile twice, tiles that do not touch, no tiles), no wrap-around from the end of a row, and that every path the solver reports validates |
 | `tests/unit/phase_data_test.cpp` | `wjs::parse_words`, `parse_graphemes`, `PhaseSet` | The two file formats, the review header (all three on one line or one to a line, placeholders, a half-given or malformed review), each line problem with its line number, the cumulative phase index, each cross-file check, `reviewed()` and the files it names, loading a directory |
-| `tests/unit/seeding_test.cpp` | `wjs::seed_board`, `RecentTargets` | The same inputs give the same board (and two boards are pinned, so a change of compiler or algorithm shows), a range of three to five words unless the board says it fell back, targets that are words of the phase and are on the board, dead jewels, focus sounds, recent targets, the cap on tries, each refused option, variety over 300 seeds; the target-length limit, and the guided fill (count kept in range, dead jewels listed as they are on the board, a function of the seed, none with letters outside the phase) |
+| `tests/unit/seeding_test.cpp` | `wjs::seed_board`, `RecentTargets` | The same inputs give the same board (and two boards are pinned, so a change of compiler or algorithm shows), a range of three to five words unless the board says it fell back, targets that are words of the phase and are on the board, dead jewels, focus sounds, recent targets, the cap on tries, each refused option, variety over 300 seeds; the target-length limit, and the guided fill (count kept in range, dead jewels listed as they are on the board, a function of the seed, none with letters outside the phase); and that 300 boards of three sizes always hold a word of the phase, the rule that no board without one is dealt |
 | `tests/unit/grapheme_binder_test.cpp` | `wjs::GraphemeBinder` | The brief's `R [AI] N`, order, longest first, greedy from the left, blocks that are whole tiles (`Qu`), single letters ignored, a block growing as the path does, every path of up to four tiles covered in order |
 | `tests/unit/shake_test.cpp` | `wjs::detect_shakes` | Synthetic traces: a shake, one still, a gentle wave, walking, a knock, turning over, a slow tilt, two shakes, a pause, sample rates and jitter, units, a harder threshold, damaged samples |
 | `tests/unit/game_rules_test.cpp` | `wjs::classify_path`, `viable_words`, `tier_for_letters`, `reward_for`, `FoundWords`, `start_tile_help`, `is_cleared` | The three states on each word set (the standard board's has no middle state; the phonics board's holds only the index, and a real word outside it is "real, not today's" with no word handed back), a word under three letters never counting, each path fault by name, a `Qu` tile adding two letters (QUIT is Power), every one of the 10,305 paths of a 3 by 3 board against the solver on both word sets; the tier table and rewards; a word found once whatever its case and kept in order; the help (shortest in letters, then nearest the top left by distance and not by reading order, then alphabetical, the same in all 120 orders of its input, unmoved while other words are found, and following it finds every word and clears the board); cleared, and the empty board |
+| `tests/unit/deal_test.cpp` | `wjs::deal_standard_board`, `next_deal_seed` | The same inputs deal the same board; a board with a word is dealt as rolled in one roll; a roll known to be empty (found by search on nine test dice and a few words) is rolled again and the second roll is dealt, with its seed; the viable list is the board's own solve; `min_viable` of 2 is kept; the cap on rolls, by both a dictionary no board can satisfy and a board that needs exactly two; each refused option and dice that make no board; each error's name. With the shipped data: none of 2,000 3x3 deals has an empty viable list (and some were rolled again), `next_deal_seed` is `std::mt19937`'s first output, and two seeds are pinned, one of them dealt in two rolls |
 | `tests/unit/profiling_test.cpp` | `wjs/profiling.hpp` | That the variant CMake chose is the one it was asked for, that every call can be made with no profiler connected, and that a zone cannot be copied or moved |
 | `tests/unit/dice_test.cpp` | `wjs::DiceSet`, `wjs::roll` | The file format (a face of several letters, commas, comments, a byte-order mark), each way a set is refused, a roll using each die once and showing one of its faces, a function of the seed, two boards pinned so a change of compiler shows, every face shown over many rolls |
 | `tests/unit/dice_data_test.cpp` | The shipped dice, `data/dice` | Each size has the dice for its board and six different faces to a die with a vowel among them; 300 boards a size rolled and solved against the dictionary hold about the words a random board does; two boards pinned. Reads the shipped files by their path in the checkout, as the performance tier does |
@@ -74,6 +75,21 @@ D G S
 Of the dictionary `CAT CAR CARE ARE TAR TEA DOG COD ROD CATS REST AT`, exactly
 `CARE ARE CAR CAT COD DOG ROD TAR TEA` are found, in that order, because `CATS`
 and `REST` cannot be traced and `AT` is below the minimum length.
+
+## The standard board's deal: what was measured
+
+The rule is the author's (2026-10-16): a board is decided and checked before the
+shake, so a board with no viable word is never dealt. `wjs::roll` does not
+check, and measured with the project's own dice and `data/dictionaries/en.txt`
+the rolls that hold no word of three letters or more are 3.8% of 3x3 rolls
+(3,830 of 100,000), 0.15% of 4x4 (30 of 20,000) and none of 5,000 5x5 or 2,000
+6x6. `deal_test.cpp` holds the deal to that on the 3x3 dice, where it matters:
+2,000 seeds, none dealt with an empty viable list, and some of them dealt in a
+second roll. Its cases on small dice and words build the first-roll-empty case
+by searching for a seed (`wjs::roll` on nine test dice with a list of eighteen
+words), so they do not depend on the shipped data. The phonics board needs no
+such check: its targets are planted, so `seed_board` returns a non-empty
+`viable`, which `seeding_test.cpp` pins over 100 seeds at each of three sizes.
 
 ## Game rules: what is pinned
 

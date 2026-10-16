@@ -11,6 +11,7 @@ configure_file(
 
 add_library(wjs_lib STATIC
     src/board.cpp
+    src/deal.cpp
     src/dice.cpp
     src/dictionary.cpp
     src/game_rules.cpp
