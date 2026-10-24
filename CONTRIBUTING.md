@@ -18,20 +18,20 @@ deliberately not built yet.
 
 ## Branching model
 
-This project follows
-[gitflow](https://nvie.com/posts/a-successful-git-branching-model/):
+The project is trunk-based:
 
-- **`develop`** is the integration branch. Target your pull request here. It is
-  protected: nothing is pushed to it directly (see
+- **`develop`** is the trunk and the default branch. Target your pull request
+  here. It is protected: nothing is pushed to it directly (see
   [docs/branch-protection.md](docs/branch-protection.md)).
-- **`main`** receives releases only: a `develop` to `main` release pull
-  request, or a `hotfix/*`. Day-to-day work never targets it.
-- Topic branches start with `feature/`, `bugfix/`, `release/`, `hotfix/` or
-  `support/`, followed by a short name of letters, digits, `.`, `_` and `-`. A
-  pull request from any other name is refused by a CI check, and a `pre-push`
-  hook in `tools/hooks` tells you sooner (see below).
-- Pull requests are merged with a **merge commit**. Squash and rebase merges
-  are not used, so the history you wrote is the history that lands.
+- **`main`** holds published releases only. A release is a `v*` tag on a
+  `develop` commit, and the release workflow moves `main` to it. Nobody opens a
+  pull request into `main`.
+- Work branches start with `feature/`, `bugfix/`, `docs/`, `chore/` or `agent/`,
+  followed by a short name of lower-case letters, digits and `-`. A pull request
+  from any other name is refused by the Policy check, and a `pre-push` hook in
+  `tools/hooks` tells you sooner (see below).
+- Pull requests are squash-merged through the merge queue, so each lands on
+  `develop` as one commit.
 
 ## Set up your build
 
@@ -94,21 +94,19 @@ what to do instead of an `#ifdef`, and how to add a platform.
   `clang-format` before committing, or have your editor do it on save.
 - [`.clang-tidy`](.clang-tidy) is the static-analysis configuration. Warnings in
   the compiler's own set are errors in every build.
-- Keep the library GUI-free and platform-free. Qt belongs in `apps/app/src` and
+- Keep the library GUI-free and platform-free. Qt belongs in `apps/app` and
   nowhere else.
 
 ## Commits and pull requests
 
 - Write each commit message as a short summary line in the imperative ("Add
   ...", "Fix ...") and, where the reason is not obvious, a few lines on why.
-- **Commit messages, pull request titles and pull request descriptions carry no
-  attribution of any kind**: no co-author trailers, no line crediting anything
-  or anyone with having produced the text or the change, and no mention of the
-  tools used to make it. They describe the change and nothing else. A CI check
-  applies this rule to every commit of a pull request (`docs/ci.md` describes
-  it), and a `commit-msg` hook runs the same script on your machine, if you
-  want to be told before you push.
-- To turn the hooks on (`commit-msg` for the rule above, `pre-push` for the
+- Sign off every commit with `git commit -s` (see "Developer Certificate of
+  Origin" below). The sign-off line is the only trailer a commit message has. A
+  CI check reads every commit of a pull request (`docs/ci.md` describes it), and
+  a `commit-msg` hook runs a similar script on your machine, if you want to be
+  told before you push.
+- To turn the hooks on (`commit-msg` for the commit text, `pre-push` for the
   branch name), run this once per clone. The `commit-msg` hook needs PowerShell
   7; without it, it says so and lets the commit through, and CI still checks:
 
@@ -118,8 +116,9 @@ what to do instead of an `#ifdef`, and how to add a platform.
 
 - Keep pull requests focused. A bug fix does not need an unrelated refactor
   riding along with it.
-- If a person using the program would notice the change, add a line under
-  `Unreleased` in [CHANGELOG.md](CHANGELOG.md).
+- If a person using the program would notice the change, add a fragment to
+  [changelog.d](changelog.d/README.md). Do not edit [CHANGELOG.md](CHANGELOG.md)
+  in a pull request.
 - If you change what a requirement says, or rename or remove a test, correct its
   row in [docs/requirements/](docs/requirements.md): the `requirements.matrix`
   test names the rows that point at a test that is gone.
@@ -139,12 +138,37 @@ what to do instead of an `#ifdef`, and how to add a platform.
    [docs/branch-protection.md](docs/branch-protection.md) how the protected
    branches are set up.
 3. Describe what changed and why, and what you ran to check it, on which system.
-4. Once it is approved it is merged with a merge commit.
+4. Once the checks are green it is squash-merged through the merge queue.
 
 ## Licence of contributions
 
-Contributions are accepted under the project's licence, GPL-3.0-or-later (see
-[LICENSE](LICENSE) and [docs/licensing.md](docs/licensing.md)).
+Contributions are accepted under the project's licence (see [LICENSE](LICENSE)
+and [docs/licensing.md](docs/licensing.md)): source files are
+GPL-3.0-or-later.
+
+### Developer Certificate of Origin
+
+By adding a `Signed-off-by` line to a commit you certify the following, from
+[developercertificate.org](https://developercertificate.org/):
+
+> (a) The contribution was created in whole or in part by me and I have the
+> right to submit it under the open source license indicated in the file; or
+>
+> (b) The contribution is based upon previous work that, to the best of my
+> knowledge, is covered under an appropriate open source license and I have the
+> right under that license to submit that work with modifications, whether
+> created in whole or in part by me, under the same open source license (unless
+> I am permitted to submit under a different license), as indicated in the file;
+> or
+>
+> (c) The contribution was provided directly to me by some other person who
+> certified (a), (b) or (c) and I have not modified it.
+>
+> (d) I understand and agree that this project and the contribution are public
+> and that a record of the contribution (including all personal information I
+> submit with it, including my sign-off) is maintained indefinitely and may be
+> redistributed consistent with this project or the open source license(s)
+> involved.
 
 That is all. If anything here is unclear or out of date, saying so in an issue
 is itself a welcome contribution.

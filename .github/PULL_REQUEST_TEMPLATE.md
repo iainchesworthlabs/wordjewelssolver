@@ -8,7 +8,8 @@
 
 ---
 
-- [ ] The branch follows gitflow naming (`feature/*`, `bugfix/*`, `release/*`, `hotfix/*`, `support/*`) and targets `develop`
+- [ ] The branch is named `feature/`, `bugfix/`, `docs/`, `chore/` or `agent/` followed by a short name, and targets `develop`
 - [ ] New or changed behaviour has test coverage
 - [ ] `clang-format` is clean and the platform-isolation check passes (docs/ci.md)
-- [ ] Commit messages and this description carry no attribution lines: no trailers, no tool or vendor names (docs/ci.md, "Commit and PR text policy")
+- [ ] A change a person using the program would notice has a fragment in `changelog.d/`
+- [ ] Every commit is signed off (`git commit -s`)
