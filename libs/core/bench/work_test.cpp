@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Work budgets for the solver and the word list: how many visits its searches
 // make over a fixed corpus of boards, how many words they find, and what the
 // dictionary holds. Nothing here is timed. The counts are the same on every

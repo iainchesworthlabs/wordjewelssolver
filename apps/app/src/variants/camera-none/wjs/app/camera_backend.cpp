@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The camera a kit without Qt Multimedia has: none. The source and the screens
 // are the same ones the multimedia build compiles, and every question the
 // interface asks is answered with the truth: no device, no preview and no frame.

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Verify a WordJewelsSolver release: the signing key, the signatures, the
 # checksums and (optionally) the build-provenance attestations.
 #

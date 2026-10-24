@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The scanner touches a camera pointed at a child's room, so the privacy rules of
 # the MVP (docs/design/application.md, "Privacy, built in and checked") are held in

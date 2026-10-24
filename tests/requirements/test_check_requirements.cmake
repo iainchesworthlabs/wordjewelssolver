@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The requirements check held to cases on throw-away trees: a page that cites a
 # test that exists, and, one fault at a time, one that does not, a missing file,

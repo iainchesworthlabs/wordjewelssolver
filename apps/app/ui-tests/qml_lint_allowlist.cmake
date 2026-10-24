@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The offences the QML lint (check_qml_literals.cmake) still allows, per rule and
 # per file: "path under apps/app/qml=count". It is a ceiling that only goes down.
 # A screen stream that fixes its file lowers (or deletes) its own lines here; a

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The review gate of a release build, in CMake so that building a release needs
 # no PowerShell: refuses to pass while a phonics file under data/phonics has no
 # complete review header (WJS_REQUIRE_REVIEWED_PHONICS, root CMakeLists.txt).

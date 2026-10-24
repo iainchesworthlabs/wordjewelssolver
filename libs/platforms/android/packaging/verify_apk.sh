@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Looks inside a finished Android package and fails on anything the build was
 # meant to rule out. It reads the package alone (aapt2 and apksigner from the SDK's
 # build-tools), so it holds for what a person would install, not for what the

@@ -1,0 +1,3 @@
+ENABLE, the Enhanced North American Benchmark Lexicon (enable1.txt), was released into the public domain by its
+originators, who state that anyone is free to use or distribute it with no fee, registration or credit required.
+This repository keeps the file unchanged. Where it came from, and the hash that identifies it, are in data/README.md.

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Decide whether a ref may be released, and say what it releases.
 #
 #   tools/release/check_release_ref.sh --tag v0.1.0 [--sha <commit>]

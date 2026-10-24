@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // What the data metrics (data_metrics.cpp) are measured on: a store that twenty

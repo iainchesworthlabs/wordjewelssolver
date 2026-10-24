@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 #
 # pre-push hook: refuse to push a branch whose name is not a gitflow name.
 #

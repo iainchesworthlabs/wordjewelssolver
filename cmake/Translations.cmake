@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The interface's catalogues (docs/design/application.md, "Languages").
 #

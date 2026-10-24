@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // Holding the reader to the target of docs/design/scanner.md: the five numbers,

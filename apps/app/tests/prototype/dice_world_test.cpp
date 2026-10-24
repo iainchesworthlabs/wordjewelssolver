@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The dice simulation (apps/app/src/scene/sim) against physics that can be
 // worked out on paper: free fall, a box that accelerates, a spinning frame, a
 // die that slides to a stop, one that bounces, two that collide, a stack, a

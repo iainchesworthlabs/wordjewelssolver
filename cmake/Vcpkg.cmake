@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Included from the top-level CMakeLists.txt BEFORE project(): the vcpkg
 # toolchain file is loaded at project() time, so the checkout it comes from is
 # verified first. Sets WJS_VCPKG_ROOT and WJS_VCPKG_PIN, and finds Git.

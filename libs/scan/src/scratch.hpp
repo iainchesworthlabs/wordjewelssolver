@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The reader's scratch: one set of pixel buffers a thread, reused across reads

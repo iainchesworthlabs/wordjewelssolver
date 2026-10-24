@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // What any implementation of the camera and board_reader interfaces has to keep true, as

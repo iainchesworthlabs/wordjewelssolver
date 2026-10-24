@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # PlatformContract.cmake - what a platform fragment
 # (libs/platforms/<name>/platform.cmake) has to declare, and the check that it

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Runs qmllint over the application's QML with no warning allowed. Qt writes the
 # list of files and the places to look for the types they use (a response file) when
 # the application is configured, and the types themselves when it is built, so this

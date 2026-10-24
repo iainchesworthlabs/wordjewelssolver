@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Render every screen to screenshots/<name>.png at 2x with the Windows Edge (headless).
 # usage: source/render_all.sh [name ...]   (no names: all)
 set -euo pipefail

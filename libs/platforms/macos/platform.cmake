@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # macOS. Included by cmake/Platform.cmake; the contract it fills in is
 # described at the top of that file.
 

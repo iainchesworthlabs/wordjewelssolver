@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // Frames drawn once per test run and shared by the cases that want one: drawing a

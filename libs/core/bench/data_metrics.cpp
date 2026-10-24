@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The performance tier's metrics for what the screens wait on besides the
 // solver: the store that is rewritten after every find, the dashboard built when
 // a parent opens it, a phase directory loaded at start-up, and a path handed in

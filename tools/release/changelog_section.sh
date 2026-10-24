@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Print one version's section of CHANGELOG.md (the release notes).
 #
 #   tools/release/changelog_section.sh 0.1.0 [CHANGELOG.md]

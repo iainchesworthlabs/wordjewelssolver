@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // TEST SUPPORT, not part of the application: the board scene the Quick Test
 // suites give the Solo Play screen in place of the 3D one.
 //

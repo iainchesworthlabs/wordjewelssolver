@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Wall-time checks, the part of the performance tier that is opt-in.
 //
 // A clock is the one measurement that can be wrong for no reason of its own:

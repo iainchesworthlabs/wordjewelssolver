@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The privacy check's own test (libs/scan/tests/check_privacy.cmake):
 #

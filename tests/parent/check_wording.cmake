@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The words a parent reads (docs/design/dashboard.md, "Wording"), held to the
 # design.

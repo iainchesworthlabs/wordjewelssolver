@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # What a package would contain, checked from the configure's own output: the
 # CPack configuration and the install rules, before anything is built or

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # check_version.cmake held to a table of cases on throw-away trees, so that a
 # comparison that stopped comparing is a failed test and not a pass.
 #

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The Qt Multimedia camera: QCamera into a QMediaCaptureSession, its frames into
 // a QVideoSink, and the newest one converted on capture. No ImageCapture, no
 // QMediaRecorder and no file: a frame is memory, and the model drops it after the

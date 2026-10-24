@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The check between the reader and the solver: the draft a grown-up corrects, and
 // the one way a reading becomes a Board.
 

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The camera and board_reader interfaces: what any implementation of them, on any
 // platform, has to keep true. Nothing here names a platform: where a platform has no
 // camera (the desktops today) the contract says so with `unavailable`, and when one

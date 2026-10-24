@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """WCAG 2.x contrast ratios for the Toybox Pixel palette pairs used by Word Jewels (wjs-tokens.json, "contrast")."""
 import json, pathlib
 

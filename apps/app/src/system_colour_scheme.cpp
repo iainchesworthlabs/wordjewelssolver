@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "system_colour_scheme.hpp"
 
 #include <QGuiApplication>

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The Qt Multimedia camera backend, constructed headless: there is no camera on a
 // build machine, and a test never opens one. What is checked is what the backend
 // decides without a device: how a QML preview is fed, what it does when the

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The profiling calls with Tracy behind them. CMake, not a preprocessor

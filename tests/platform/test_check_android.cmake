@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The Android manifest check held to a table of cases, so that a rule that
 # silently stopped matching is a failed test and not a manifest that passes:

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The program's version is written in three places: project(VERSION) in the
 # root CMakeLists.txt, "version" in vcpkg.json, and the newest release heading in
 # CHANGELOG.md. They are bumped together at a release; this check holds them to

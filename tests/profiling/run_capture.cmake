@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # tracy-capture with its output thrown away, for check_trace.cmake.
 #

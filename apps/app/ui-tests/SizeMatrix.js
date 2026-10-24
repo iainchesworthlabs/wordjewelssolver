@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 .pragma library
 
 // The size matrix: the window sizes and text scales a screen of the application

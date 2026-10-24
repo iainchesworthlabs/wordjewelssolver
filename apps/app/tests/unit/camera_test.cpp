@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Mode A's camera, without a camera: the picture conversion, the state a
 // CameraSource reports through a backend the test supplies, and the model's use
 // of it. The only frames here are made in memory or drawn by the scanner's

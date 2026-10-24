@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/platform/window_chrome.hpp"
 
 #include <windows.h>

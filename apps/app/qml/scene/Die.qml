@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // qmllint disable import
 // qmllint disable unresolved-type
 // Qt's qmltypes do not name QQuick3DGeometry, the C++ base DieGeometry needs, so

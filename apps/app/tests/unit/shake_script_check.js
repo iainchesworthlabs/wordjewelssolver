@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // What shake_script_test.cpp asks of apps/app/qml/scene/ShakeScript.js.
 // Plain JavaScript run in Qt's own engine, so the checks are of the script the
 // scene plays and not of a copy: the script's own text is evaluated and run(S) is

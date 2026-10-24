@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # Every zone has a name of the right shape, no name is used twice, and the
 # zones a trace of the application's work is made of exist.

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/app/sound_backend.hpp"
 
 // Nothing to do: this variant is compiled when Qt Multimedia is not in the

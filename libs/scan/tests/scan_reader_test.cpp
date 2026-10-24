@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // read_board, end to end on frames from the synthetic corpus: the answer, the
 // pixel formats, the options, the errors, and the counts it keeps.
 

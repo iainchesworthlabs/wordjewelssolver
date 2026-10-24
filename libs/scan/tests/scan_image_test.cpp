@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Frames and the image operations the finder is built from: luma, shrinking,
 // sampling, blurring, the local threshold and the connected blobs.
 

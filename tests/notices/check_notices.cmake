@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The third-party notices a package carries, held to the sections it has to
 # state (docs/licensing.md, "Notices").

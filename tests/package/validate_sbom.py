@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Validate a CycloneDX 1.6 document against the specification's own JSON Schema.
 
     python -I tests/package/validate_sbom.py <sbom.cdx.json> <schema-dir>

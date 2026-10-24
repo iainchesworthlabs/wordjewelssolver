@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The design system's guard rail over the application's QML sources: a screen
 # says what a thing IS (a Label's role, a Theme token) and never how it looks.

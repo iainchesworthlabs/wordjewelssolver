@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The nightly analysis integration, held together: the presets the workflow
 # names exist with the settings that make them analysis builds, the workflow is
 # scheduled and stays out of merge_group (it produces no required check), and

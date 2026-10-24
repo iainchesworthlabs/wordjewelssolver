@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Build the Linux application as an AppImage: one file that carries Qt (the Qt Quick
 # runtime, Quick 3D, the QML modules and the plugins the application loads) and runs
 # on a distribution without any of it.

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Included from the top-level CMakeLists.txt after project(): reads the
 # provenance the version block (libs/core/include/wjs/version.hpp.in) states, once
 # at configure time. Sets WJS_GIT_COMMIT, WJS_GIT_DESCRIBE, WJS_GIT_BRANCH and

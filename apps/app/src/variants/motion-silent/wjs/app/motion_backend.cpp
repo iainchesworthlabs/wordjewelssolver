@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/app/motion_backend.hpp"
 
 #include <utility>

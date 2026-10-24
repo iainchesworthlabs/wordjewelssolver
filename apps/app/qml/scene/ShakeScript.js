@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 .pragma library
 
 // The shake, the lid and the drop as a script: what every die, the box, the lid

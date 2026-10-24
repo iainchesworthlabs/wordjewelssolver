@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/sound_it_out.hpp"
 
 #include <algorithm>

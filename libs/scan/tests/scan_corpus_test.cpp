@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The reader held to the target of docs/design/scanner.md, over the synthetic
 // corpus (libs/scan/tests/synth).
 //

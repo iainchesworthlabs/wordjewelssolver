@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 import QtMultimedia
 
 // Not a screen and never loaded. It exists so that Qt's QML import scanner sees

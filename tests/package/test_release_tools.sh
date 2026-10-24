@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Self-test of the release tooling (tools/release) and of the release workflow's
 # pins, with no build and no network: the release pipeline is mostly scripts, and
 # a script that has only ever run on a tag day is a script that fails on one.

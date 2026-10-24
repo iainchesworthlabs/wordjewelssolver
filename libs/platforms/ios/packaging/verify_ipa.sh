@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Check that an iOS application (a built .app, or an exported .ipa) is complete.
 #
 #   libs/platforms/ios/packaging/verify_ipa.sh <WordJewelsSolver.app | package.ipa>

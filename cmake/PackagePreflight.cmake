@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # PackagePreflight.cmake - run by CPack before it builds any package
 # (CPACK_PRE_BUILD_SCRIPTS, set in cmake/Packaging.cmake).

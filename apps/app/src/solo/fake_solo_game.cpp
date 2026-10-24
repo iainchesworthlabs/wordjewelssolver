@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "fake_solo_game.hpp"
 
 #include <algorithm>

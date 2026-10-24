@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The interface's catalogues are what lupdate makes from the sources now
 # (docs/design/application.md, "Languages"; docs/ci.md).

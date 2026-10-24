@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The QML literal check held to cases on throw-away trees: each rule catches its
 # own offence, the exempt places stay exempt, the allow-list is a ceiling and

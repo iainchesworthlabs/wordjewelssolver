@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Write the iOS application icon from the repository's icon.
 
     python tools/package/make_ios_icon.py

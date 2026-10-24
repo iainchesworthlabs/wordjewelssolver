@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The dice simulation (apps/app/src/scene/sim) and the face of a die that
 // is to be up: the board says which face of each die is up, and the guide turns
 // the die to it. What has to be true: a face asked for is the face that is up

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 .pragma library
 
 // The shake, the lid, the drop and the settle of the 2D placeholder scene

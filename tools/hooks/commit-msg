@@ -1,4 +1,5 @@
 #!/bin/sh
+# SPDX-License-Identifier: GPL-3.0-or-later
 #
 # commit-msg hook: the commit message carries no attribution of any kind.
 #

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The store file: how StoreData is written as text and read back, how an older
 // file is migrated, and how a damaged one is told from a good one. Nothing here
 // touches the disk (store.cpp does), so all of it is held to tests on strings.

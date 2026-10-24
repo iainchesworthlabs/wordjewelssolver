@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // bake_probe: makes the board scene's light probe,
 // apps/app/qml/scene/lightprobe/sky.ktx.
 //

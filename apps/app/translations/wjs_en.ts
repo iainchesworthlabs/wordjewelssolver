@@ -4,7 +4,7 @@
 <context>
     <name>AppBar</name>
     <message>
-        <location filename="../qml/kit/AppBar.qml" line="+34"/>
+        <location filename="../qml/kit/AppBar.qml" line="+35"/>
         <source>Back</source>
         <translation>Back</translation>
     </message>
@@ -30,7 +30,7 @@
 <context>
     <name>AssistScreen</name>
     <message>
-        <location filename="../qml/scan/AssistScreen.qml" line="+113"/>
+        <location filename="../qml/scan/AssistScreen.qml" line="+114"/>
         <source>Find words</source>
         <translation>Find words</translation>
     </message>
@@ -38,7 +38,7 @@
 <context>
     <name>CheckScreen</name>
     <message>
-        <location filename="../qml/scan/CheckScreen.qml" line="+381"/>
+        <location filename="../qml/scan/CheckScreen.qml" line="+382"/>
         <source>Turn</source>
         <translation>Turn</translation>
     </message>
@@ -46,7 +46,7 @@
 <context>
     <name>Home</name>
     <message>
-        <location filename="../qml/Home.qml" line="+113"/>
+        <location filename="../qml/Home.qml" line="+114"/>
         <source>Shake. Find. Collect.</source>
         <translation>Shake. Find. Collect.</translation>
     </message>
@@ -94,7 +94,7 @@
 <context>
     <name>HomeWording</name>
     <message>
-        <location filename="../qml/HomeWording.qml" line="+9"/>
+        <location filename="../qml/HomeWording.qml" line="+10"/>
         <source>Play on my own</source>
         <translation>Play on my own</translation>
     </message>
@@ -117,7 +117,7 @@
 <context>
     <name>JewelsWording</name>
     <message>
-        <location filename="../qml/solo/JewelsWording.qml" line="+9"/>
+        <location filename="../qml/solo/JewelsWording.qml" line="+10"/>
         <source>My jewels</source>
         <translation>My jewels</translation>
     </message>
@@ -246,7 +246,7 @@
 <context>
     <name>Main</name>
     <message>
-        <location filename="../qml/Main.qml" line="+40"/>
+        <location filename="../qml/Main.qml" line="+41"/>
         <source>Word Jewels Solver</source>
         <translation>Word Jewels Solver</translation>
     </message>
@@ -254,7 +254,7 @@
 <context>
     <name>ParentWording</name>
     <message>
-        <location filename="../qml/parent/ParentWording.qml" line="+28"/>
+        <location filename="../qml/parent/ParentWording.qml" line="+29"/>
         <source>Word Jewels</source>
         <translation>Word Jewels</translation>
     </message>
@@ -861,7 +861,7 @@
 <context>
     <name>PlayingPanel</name>
     <message>
-        <location filename="../qml/solo/PlayingPanel.qml" line="+59"/>
+        <location filename="../qml/solo/PlayingPanel.qml" line="+60"/>
         <source>Tap the last die again, or press Done</source>
         <translation>Tap the last die again, or press Done</translation>
     </message>
@@ -904,7 +904,7 @@
 <context>
     <name>ScanScreen</name>
     <message>
-        <location filename="../qml/scan/ScanScreen.qml" line="+118"/>
+        <location filename="../qml/scan/ScanScreen.qml" line="+119"/>
         <source>Set up a board</source>
         <translation>Set up a board</translation>
     </message>
@@ -912,7 +912,7 @@
 <context>
     <name>ScanWording</name>
     <message>
-        <location filename="../qml/scan/ScanWording.qml" line="+17"/>
+        <location filename="../qml/scan/ScanWording.qml" line="+18"/>
         <source>Back</source>
         <translation>Back</translation>
     </message>
@@ -1222,7 +1222,7 @@
 <context>
     <name>Sheet</name>
     <message>
-        <location filename="../qml/kit/Sheet.qml" line="+24"/>
+        <location filename="../qml/kit/Sheet.qml" line="+25"/>
         <source>Close</source>
         <translation>Close</translation>
     </message>
@@ -1230,7 +1230,7 @@
 <context>
     <name>SoloBox</name>
     <message>
-        <location filename="../qml/solo/SoloBox.qml" line="+124"/>
+        <location filename="../qml/solo/SoloBox.qml" line="+125"/>
         <source>%1. %2</source>
         <translation>%1. %2</translation>
     </message>
@@ -1238,7 +1238,7 @@
 <context>
     <name>SoloScreen</name>
     <message>
-        <location filename="../qml/solo/SoloScreen.qml" line="+250"/>
+        <location filename="../qml/solo/SoloScreen.qml" line="+251"/>
         <source>Solo Play</source>
         <translation>Solo Play</translation>
     </message>
@@ -1311,7 +1311,7 @@
 <context>
     <name>SoloWording</name>
     <message>
-        <location filename="../qml/solo/SoloWording.qml" line="+16"/>
+        <location filename="../qml/solo/SoloWording.qml" line="+17"/>
         <source>Back</source>
         <translation>Back</translation>
     </message>
@@ -1590,7 +1590,7 @@
 <context>
     <name>Wordmark</name>
     <message>
-        <location filename="../qml/kit/Wordmark.qml" line="+16"/>
+        <location filename="../qml/kit/Wordmark.qml" line="+17"/>
         <location line="+17"/>
         <source>Word Jewels</source>
         <translation>Word Jewels</translation>

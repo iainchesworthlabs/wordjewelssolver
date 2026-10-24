@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # check_phonics_review.cmake held to a table of cases on throw-away data, as
 # test_check_phonics.ps1 does for the checker the gate was ported from: the
 # release build's gate must refuse what it should, so the gate itself is tested.

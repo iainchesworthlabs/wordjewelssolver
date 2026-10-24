@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Check that a macOS application bundle is complete and self-contained.
 #
 #   libs/platforms/macos/packaging/verify_bundle.sh <WordJewelsSolver.app | package.dmg>

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Write the over-the-air install manifest (manifest.plist) of an ad-hoc iOS build.
 #
 #   tools/release/make_ios_manifest.sh --out <manifest.plist> --ipa <file name>

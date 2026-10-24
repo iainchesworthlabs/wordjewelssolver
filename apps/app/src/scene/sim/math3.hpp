@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The small amount of vector and rotation arithmetic the dice simulation needs.

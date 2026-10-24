@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include <charconv>
 #include <cstddef>
 #include <exception>

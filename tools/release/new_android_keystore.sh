@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Create the Android UPLOAD keystore, ON YOUR OWN MACHINE, and print the exact steps
 # that put it to work. The repository's workflow never makes a key: it only reads one
 # from four repository secrets (docs/ci.md, "Android").

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The two small types the profiling calls (wjs/profiling.hpp) are written in

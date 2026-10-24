@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The Android target, held together: the manifest asks for the camera and nothing
 # else, the presets that build it exist with the settings that make them Android

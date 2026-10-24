@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Write a macOS .icns file from the repository's PNG icons.
 
     python -I tools/package/make_icns.py <output.icns>

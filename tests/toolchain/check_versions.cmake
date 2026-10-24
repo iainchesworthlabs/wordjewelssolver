@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The toolchain pins live in one file (.github/toolchain-versions.json) and
 # the workflows read them from there. This check holds the two together: a
 # version bumped in a workflow but not in the file, or the other way round,

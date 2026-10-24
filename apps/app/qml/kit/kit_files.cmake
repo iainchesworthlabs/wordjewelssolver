@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The kit's QML files, in one place. The application's QML module, the Qt Quick
 # Test module (apps/app/ui-tests), the scan preview and the parent preview (tests/) each
 # embed the kit, and a kit component that uses another (AppButton uses Label,

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Record the SHA-256 of the AppImage tools in linuxdeploy.pins.
 #
 #   libs/platforms/linux/packaging/pin_linuxdeploy.sh

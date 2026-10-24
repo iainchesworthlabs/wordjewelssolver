@@ -15,8 +15,9 @@ How to read the evidence marks:
 
 ## Summary
 
-1. **The project is GPL-3.0-or-later** [V: `LICENSE`, `vcpkg.json`]. The files
-   carry no per-file headers; `LICENSE` and `vcpkg.json` are the statement.
+1. **The project is GPL-3.0-or-later** [V: `LICENSE`, `vcpkg.json`]. Each source
+   file carries an SPDX identifier line, `REUSE.toml` states the licence of
+   every other file, and `reuse lint` checks both in CI.
 2. **The history has one author**, so as far as it shows there is one
    copyright holder, and the choice of licence is theirs [V: `git shortlog`].
 3. **A Windows package ships Qt's runtime**, and now carries the third-party

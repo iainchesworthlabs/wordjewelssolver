@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # Tracy is on by default in Debug builds, and never in anything that ships.
 #

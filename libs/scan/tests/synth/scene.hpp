@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The synthetic corpus: frames of a board of dice drawn from numbers and a seed,

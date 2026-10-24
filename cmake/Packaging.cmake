@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # Packaging.cmake - CPack. Included once, from the top-level CMakeLists.txt,
 # after every target's install() rules have been declared: the packages it makes

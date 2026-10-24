@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The privacy scan held to a table of cases on throw-away trees: each rule must
 # find the violation it is for, and must leave alone what it is not for (a

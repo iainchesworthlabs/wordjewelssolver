@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Write the Android application icon from the repository's icon.
 
     python tools/package/make_android_icon.py

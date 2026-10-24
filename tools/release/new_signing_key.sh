@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Create the release signing key pair, ON YOUR OWN MACHINE, and print the exact
 # steps that put it to work. The repository's workflow never makes a key: it
 # only reads one from two repository secrets (docs/ci.md, "Releases").

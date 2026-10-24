@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Sign the macOS disk image's application with a Developer ID, notarise the image
 # with Apple and staple the ticket - or, with no signing secrets, do nothing and say
 # so.

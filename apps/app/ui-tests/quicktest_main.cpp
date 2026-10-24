@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The entry point of the Qt Quick Test harness (docs/testing.md, "The
 // interactive QML"): every tst_*.qml under apps/app/ui-tests, one ctest entry each,
 // headless.

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The wording check held to cases on throw-away trees: a wording file that lacks
 # one of the design's sentences, a word an assessment is made of, a sentence in

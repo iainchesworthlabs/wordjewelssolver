@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Writes the synthetic scanner corpus to a directory, so that a person can look at
 // it: one PNG a frame, and beside each a text file with the true board.
 //

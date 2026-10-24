@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The one step of the multimedia backend that can be tested without a camera: a
 // QVideoFrame made from a picture, converted the way QCamera's frames are
 // (QVideoFrame::toImage() and then the shared conversion). It is compiled only

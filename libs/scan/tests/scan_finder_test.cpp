@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Finding the board in a frame, drawing it square, and counting its cells, on
 // frames from the synthetic corpus and on drawn combs and squares.
 

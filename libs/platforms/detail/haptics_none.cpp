@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/platform/haptics.hpp"
 
 // The desktop haptics: there is no haptic engine assumed on Windows, macOS or

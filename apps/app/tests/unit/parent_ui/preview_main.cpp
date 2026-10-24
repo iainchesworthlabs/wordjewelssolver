@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The parent area's screens in a stub shell: to look at them, and to check them.
 //
 //   wjs_parent_preview                          a window, with made-up play

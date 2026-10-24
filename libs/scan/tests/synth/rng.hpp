@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #pragma once
 
 // The corpus's random numbers. std::mt19937 is specified exactly, and the draws

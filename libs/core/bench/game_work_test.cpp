@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Work budgets for the code that makes a board and shows its blocks: the roll of
 // the standard board's dice, the seeding of the phonics board and the
 // grapheme binder. Nothing here is timed: the counts are the same on every

@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Open a release package the way a user would and run what is in it.
 #
 #   tools/release/smoke_package.sh <package> [<package> ...]

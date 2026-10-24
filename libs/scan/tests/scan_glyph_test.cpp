@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The stroke font and the glyph reader, on a drawn die and nothing else: no board,
 // no camera, no perturbation. What these hold down is that the reader finds the
 // glyph it was shown at any turn, and says "nothing" when there is nothing.

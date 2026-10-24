@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/parent_gate.hpp"
 
 #include <algorithm>

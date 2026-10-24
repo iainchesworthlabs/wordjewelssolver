@@ -1,4 +1,5 @@
 #!/usr/bin/env python3
+# SPDX-License-Identifier: GPL-3.0-or-later
 """Writes the Toybox Pixel mockups for Word Jewels Solver: toybox.css, screens/*.html and gallery.html.
 
 The mockups are design material, not production code. Values come from tokens.json (Snake, unchanged) and

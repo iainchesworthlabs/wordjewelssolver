@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The Android manifest's rules, as a function both the check
 # (tests/platform/check_android.cmake) and its self-test

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The privacy rules of the first release, as far as the source tree can say
 # whether they hold (docs/design/application.md, "Privacy, built in and

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "wjs/app/speech_backend.hpp"
 
 // Nothing to do: this variant is compiled when Qt TextToSpeech is not in the

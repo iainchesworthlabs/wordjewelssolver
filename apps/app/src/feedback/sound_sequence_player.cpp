@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "sound_sequence_player.hpp"
 
 #include <QTimer>

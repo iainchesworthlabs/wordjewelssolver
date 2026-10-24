@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Work budgets for what the screens wait on besides the solver: the store that is
 // rewritten after every find, the dashboard a parent opens, the phase directory
 // read at start-up, and the paths a finger hands in. Nothing here is timed (the

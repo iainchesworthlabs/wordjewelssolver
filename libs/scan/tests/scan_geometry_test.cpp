@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // Geometry: hulls, the four-sided outline of a convex shape, which corner is first,
 // and the projective map from a square to the board in the picture.
 

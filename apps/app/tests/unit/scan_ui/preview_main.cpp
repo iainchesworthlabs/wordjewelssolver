@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The Family Assistant's screens in a stub shell: a program to look at them with,
 // and, with --check, a test that walks `scan.ready`, the typed board, the check
 // screen and `assist.playing` without a display, checks what they say and that

@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # Notices.cmake - the third-party notices a package carries, assembled from
 # fragment files at configure time.

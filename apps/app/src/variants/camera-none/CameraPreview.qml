@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 import QtQuick
 
 // The live view a kit without Qt Multimedia has: nothing to draw. It is the same

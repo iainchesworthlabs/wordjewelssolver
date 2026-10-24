@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # ---------------------------------------------------------------------------
 # The requirements matrix (docs/requirements.md and docs/requirements/*.md) is
 # held to the tree: a row may not point at a test, a file or a status that does

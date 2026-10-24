@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // TEST SUPPORT, not part of the application: the scene module's Profiler
 // singleton (apps/app/src/scene/profiler.*) with no profiler behind it.
 //

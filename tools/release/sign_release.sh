@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# SPDX-License-Identifier: GPL-3.0-or-later
 # Write SHA256SUMS for a release directory and sign what is in it with GPG.
 #
 #   tools/release/sign_release.sh --dist <dir> --keys-dir <.github/release-signing>

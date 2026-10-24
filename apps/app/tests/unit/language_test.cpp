@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 // The interface's languages (docs/design/application.md, "Languages"):
 // the catalogues in apps/app/translations/, the LanguageManager's direction and fallback, that a
 // catalogue is really installed, and that the app's font chain carries the

@@ -1,3 +1,4 @@
+// SPDX-License-Identifier: GPL-3.0-or-later
 #include "solo_game_setup.hpp"
 
 #include <random>

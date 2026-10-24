@@ -1,3 +1,4 @@
+# SPDX-License-Identifier: GPL-3.0-or-later
 # The board scene is one component with one interface (docs/design/board.md, "The
 # shake and the drop"; docs/design/shake-prototype.md, "The interface"): given a
 # finished board and a seed, play the shake and the drop and say when the dice are
